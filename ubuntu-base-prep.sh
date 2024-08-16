@@ -21,8 +21,8 @@ echo $PROXY
 sudo apt install qemu-user-static
 
 # Download Ubuntu Base file system (https://wiki.ubuntu.com/Base)
-ROOTFSURL=https://cdimage.ubuntu.com/ubuntu-base/releases/20.04.5/release/
-ROOTFS=ubuntu-base-20.04.5-base-${ARCH}.tar.gz
+ROOTFSURL=https://cdimage.ubuntu.com/ubuntu-base/releases/22.04.4/release/
+ROOTFS=ubuntu-base-22.04.4-base-${ARCH}.tar.gz
 if [ ! -s ${ROOTFS} ]; then
     curl -OLf ${ROOTFSURL}${ROOTFS}
 fi
