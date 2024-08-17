@@ -71,7 +71,7 @@ fi
 #prepare kernel for domU
 
 if [ ! -d linux_domu ]; then
-    git clone --depth 1 --branch linux-5.5.y  http://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git linux_domu
+    git clone --depth 1 --branch linux-6.6.y  http://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git linux_domu
     cd ${WRKDIR}
 fi
 
@@ -80,7 +80,7 @@ cd ${WRKDIR}linux_domu
 if [ "${BUILD_ARCH}" == "arm64" ]; then
     if [ ! -s ${WRKDIR}linux_domu/.build-arm64/.config ]; then
         mkdir -p ${WRKDIR}linux_domu/.build-arm64/
-	cp ${WRKDIR}config/kernel/linux_5.5_domu.config ${WRKDIR}linux_domu/.build-arm64/.config
+	cp ${WRKDIR}config/kernel/linux_6.6_domu.config ${WRKDIR}linux_domu/.build-arm64/.config
     fi
     if [ ! -s ${WRKDIR}linux_domu/.build-arm64/arch/arm64/boot/Image ]; then
         echo "Building kernel. This takes a while. To monitor progress, open a new terminal and use \"tail -f buildoutput.log\""
